@@ -1,0 +1,26 @@
+{
+  "name": "nodejs-rabbitmq",
+  "version": "1.0.0",
+  "description": "Processing a big CSV file and save at DB using RabbitMQ queues",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edmilson-torres/nodejs-rabbitmq.git"
+  },
+  "keywords": [
+    "Node.js",
+    "Typescript",
+    "TypeORM",
+    "MySQL",
+    "RabbitMQ"
+  ],
+  "author": "Edmilson Torres <edmilson.torres@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/edmilson-torres/nodejs-rabbitmq/issues"
+  },
+  "homepage": "https://github.com/edmilson-torres/nodejs-rabbitmq#readme"
+}
