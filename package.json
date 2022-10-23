@@ -32,6 +32,8 @@
   },
   "homepage": "https://github.com/edmilson-torres/nodejs-rabbitmq#readme",
   "devDependencies": {
+    "@types/amqplib": "^0.8.2",
+    "@types/express": "^4.17.14",
     "@types/node": "^18.11.3",
     "@typescript-eslint/eslint-plugin": "^5.40.1",
     "@typescript-eslint/parser": "^5.40.1",
