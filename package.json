@@ -1,7 +1,6 @@
 {
   "name": "nodejs-rabbitmq",
   "version": "1.0.0",
-  "type": "commonjs",
   "description": "Processing a big CSV file and save at DB using RabbitMQ queues",
   "main": "index.js",
   "scripts": {
@@ -12,7 +11,10 @@
     "lint": "eslint ./src --ext .ts",
     "lint:fix": "eslint ./src --ext .ts --fix",
     "prettier": "prettier --check src/**/*.ts",
-    "prettier:fix": "prettier --write src/**/*.ts"
+    "prettier:fix": "prettier --write src/**/*.ts",
+    "consumer:orders": "ts-node-dev --respawn --transpile-only src/workers/consumers/order-consumer.ts",
+    "consumer:pdfa": "ts-node-dev --respawn --transpile-only src/workers/consumers/pdf-order-consumer-a.ts",
+    "consumer:pdfb": "ts-node-dev --respawn --transpile-only src/workers/consumers/pdf-order-consumer-b.ts"
   },
   "repository": {
     "type": "git",
@@ -21,8 +23,6 @@
   "keywords": [
     "Node.js",
     "Typescript",
-    "TypeORM",
-    "MySQL",
     "RabbitMQ"
   ],
   "author": "Edmilson Torres <edmilson.torres@gmail.com>",
@@ -39,8 +39,6 @@
     "@typescript-eslint/parser": "^5.40.1",
     "eslint": "^8.26.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-import": "^2.25.4",
-    "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "^6.1.1",
     "prettier": "^2.7.1",
