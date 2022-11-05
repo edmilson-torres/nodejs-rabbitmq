@@ -1,12 +1,38 @@
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/64763336/200126795-635b0ffe-e947-404a-97f7-d178f27659a5.png" width="800" alt="banner mensageria" />
+</p>
 # Node.js RabbitMQ
 
-## Sobre
-Projeto feito para estudar mensageria utilizando a ferramenta RabbitMQ com o tipo de exchange topic.
+## Sobre!
+Projeto feito para estudar mensageria utilizando a ferramenta RabbitMQ com o tipo de exchange topic.  
+
 ### Explicando o projeto
+
+<table>
+<tr>
+<th scope="col">
+<p align="left">
 O projeto simula o processamento do recebimento de "orders" ou de compras finalizadas do ambiente online e offline (loja física) de uma grande empresa, e a partir desse cenário enviar para serviços de persistência e para a criação do PDF e posterior envio por e-mail somente do ambiente online, onde ocorre a maioria das vendas, neste caso com 2 consumidores.
 Como essas funções podem ser processadas de forma assíncrona, a mensageria pode ser utilizada para evitar gargalos, facilitando a escalabilidade caso seja necessário, sem prejudicar os processamentos mais demorados como a criação de PDFs.
-Sendo demonstrado nas imagens abaixo.
+A exchange topic faz o envio das mensagens para as filas de acordo com as "routing key" passadas pelo producer, sendo possível utilizar máscaras como # ou *, e as filas por sua vez direciona para o consumer apropriado, que pode ser mais de um como no exemplo criado.
+Sendo demonstrado nas imagens abaixo.</p>
+</th>
+<th scope="col">
+  <img src="https://user-images.githubusercontent.com/64763336/200126889-61fc6525-6500-4cf2-8fca-d11f098fa326.png" alt="banner mensageria" />
+</th>
+</tr>
+</table>
 
+<table>
+<tr>
+ <th scope="col">simulação de online orders sendo enviadas para ambos consumers</th>
+ <th scope="col">simulação de offline orders sendo enviada apenas para o consumer de persistência de dados</th>
+</tr>
+<tr>
+ <td><img src="https://user-images.githubusercontent.com/64763336/200126923-74370635-c753-4d38-b2ac-73d13ba56b65.gif"  alt="banner mensageria" /></td>
+ <td><img src="https://user-images.githubusercontent.com/64763336/200126925-11d81444-82cf-4373-935f-f46e8af7bf74.gif"  alt="banner mensageria" /></td>
+</tr>
+</table>
 
 ## Rodando o projeto
 Inicie seu servidor RabbitMQ e configure o `.env` com suas credenciais ou execute 
