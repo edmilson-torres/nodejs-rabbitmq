@@ -9,3 +9,47 @@ services:
     environment:
         - RABBITMQ_DEFAULT_USER=admin
         - RABBITMQ_DEFAULT_PASS=123456
+    volumes:
+      - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
+      - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
+
+  order-consumer: &app
+    build: .
+    container_name: 'order-consumer'
+    depends_on:
+      - rabbitmq
+    environment:
+      - QUEUE_URL=amqp://admin:123456@rabbitmq
+    command: 
+      - sh
+      - -c
+      - |
+        sleep 30
+        node ./dist/workers/consumers/order-consumer.js
+
+  pdf-a-consumer:
+    <<: *app
+    container_name: 'pdf-a-consumer'
+    command: 
+      - sh
+      - -c
+      - |
+        sleep 30
+        node ./dist/workers/consumers/pdf-order-consumer-a.js
+
+  pdf-b-consumer:
+    <<: *app
+    container_name: 'pdf-b-consumer'
+    command: 
+      - sh
+      - -c
+      - |
+        sleep 30
+        node ./dist/workers/consumers/pdf-order-consumer-b.js
+
+  app:
+    <<: *app
+    container_name: 'api'
+    ports:
+      - 3000:3000
+    command: npm start
