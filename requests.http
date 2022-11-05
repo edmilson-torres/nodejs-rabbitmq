@@ -1,13 +1,24 @@
 ### Sending 30 orders to rabbitmq, 19 online for pdf consumer
 GET http://localhost:3000/api/publish/samples
 
-### Send a message
+### Send a message using type online
 POST http://localhost:3000/api/publish
 Content-Type: application/json
 
 {
     "data": {
         "type": "online",
+        "message": "testing"
+    }
+}
+
+### Send a message using type offline
+POST http://localhost:3000/api/publish
+Content-Type: application/json
+
+{
+    "data": {
+        "type": "offline",
         "message": "testing"
     }
 }
