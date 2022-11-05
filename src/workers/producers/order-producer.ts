@@ -5,7 +5,9 @@ interface RequestBodyProtocol {
     data: { type: 'online' | 'offline' };
 }
 
-async function topicExchangePublisher(request: RequestBodyProtocol) {
+export default async function topicExchangePublisher(
+    request: RequestBodyProtocol
+) {
     try {
         const rabbitmqUrl = env.queueUrl;
         const connection = await connect(rabbitmqUrl);
@@ -33,5 +35,3 @@ async function topicExchangePublisher(request: RequestBodyProtocol) {
         return error;
     }
 }
-
-export default topicExchangePublisher;

@@ -2,7 +2,7 @@ import { connect } from 'amqplib';
 import env from '../../config/env';
 import orders from '../orders-data-sample.json';
 
-async function topicExchangePublisherSamples() {
+export default async function topicExchangePublisherSamples() {
     try {
         const rabbitmqUrl = env.queueUrl;
         const connection = await connect(rabbitmqUrl);
@@ -32,5 +32,3 @@ async function topicExchangePublisherSamples() {
         return error;
     }
 }
-
-export default topicExchangePublisherSamples;
