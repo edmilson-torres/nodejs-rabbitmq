@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/64763336/200126795-635b0ffe-e947-404a-97f7-d178f27659a5.png" width="800" alt="banner mensageria" />
+  <img src="https://user-images.githubusercontent.com/64763336/200126795-635b0ffe-e947-404a-97f7-d178f27659a5.png" width=800 alt="banner mensageria" />
 </p>
 # Node.js RabbitMQ
 
@@ -7,22 +7,22 @@
 Projeto feito para estudar mensageria utilizando a ferramenta RabbitMQ com o tipo de exchange topic.  
 
 ### Explicando o projeto
-
 <table>
 <tr>
-<th scope="col">
-<p align="left">
-O projeto simula o processamento do recebimento de "orders" ou de compras finalizadas do ambiente online e offline (loja física) de uma grande empresa, e a partir desse cenário enviar para serviços de persistência e para a criação do PDF e posterior envio por e-mail somente do ambiente online, onde ocorre a maioria das vendas, neste caso com 2 consumidores.
-Como essas funções podem ser processadas de forma assíncrona, a mensageria pode ser utilizada para evitar gargalos, facilitando a escalabilidade caso seja necessário, sem prejudicar os processamentos mais demorados como a criação de PDFs.
-A exchange topic faz o envio das mensagens para as filas de acordo com as "routing key" passadas pelo producer, sendo possível utilizar máscaras como # ou *, e as filas por sua vez direciona para o consumer apropriado, que pode ser mais de um como no exemplo criado.
-Sendo demonstrado nas imagens abaixo.</p>
-</th>
-<th scope="col">
-  <img src="https://user-images.githubusercontent.com/64763336/200126889-61fc6525-6500-4cf2-8fca-d11f098fa326.png" alt="banner mensageria" />
-</th>
+ <td><p align="left">
+O projeto simula o processamento do recebimento de "orders"  
+ou de compras finalizadas do ambiente online e offline (loja física) de uma grande empresa, e a partir desse cenário enviar para serviços de persistência e para a criação do PDF e posterior envio por e-mail somente do ambiente online, onde ocorre a maioria das vendas, neste caso com 2 consumidores.</p
+   
+   ><p align="left">Como essas funções podem ser processadas de forma assíncrona, a mensageria pode ser utilizada para evitar gargalos, facilitando a escalabilidade caso seja necessário, sem prejudicar os processamentos mais demorados como a criação de PDFs.</p>
+   
+   <p align="left">A exchange topic faz o envio das mensagens para as filas de acordo com as "routing key" passadas pelo producer, sendo possível utilizar máscaras como # ou *, e as filas por sua vez direciona para o consumer apropriado, que pode ser mais de um como no exemplo criado.Sendo demonstrado nas imagens abaixo.
+ </p>
+ </td>
+ <td><img src="https://user-images.githubusercontent.com/64763336/200126889-61fc6525-6500-4cf2-8fca-d11f098fa326.png" width=1804 alt="fluxo mensageria" /></td>
 </tr>
 </table>
 
+    
 <table>
 <tr>
  <th scope="col">simulação de online orders sendo enviadas para ambos consumers</th>
