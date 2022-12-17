@@ -1,12 +1,13 @@
 <p align="center">
   <img src="https://user-images.githubusercontent.com/64763336/200126795-635b0ffe-e947-404a-97f7-d178f27659a5.png" width=800 alt="banner mensageria" />
 </p>
+
 # Node.js RabbitMQ
 
-## Sobre!
+## 📄 Sobre
 Projeto feito para estudar mensageria utilizando a ferramenta RabbitMQ com o tipo de exchange topic.  
 
-### Explicando o projeto
+### ⚙️ Explicando o projeto
 <table>
 <tr>
  <td valign="top"><p align="left">
@@ -35,7 +36,7 @@ ou de compras finalizadas do ambiente online e offline (loja física) de uma gra
 </tr>
 </table>
 
-## Rodando o projeto
+## 🚀 Rodando o projeto
 Inicie seu servidor RabbitMQ e configure o `.env` com suas credenciais ou execute 
 usando o Docker com o comando abaixo e utilize a credencial do `.env.example`
 ```bash
